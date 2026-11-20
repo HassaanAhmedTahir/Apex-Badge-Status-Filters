@@ -1,0 +1,126 @@
+/* =====================================================
+   FILTER BADGE BUTTON – Scoped Styling
+   Scope: .filter_badge_button ONLY
+   Page: Health Insurance Overview
+   ===================================================== */
+
+/* 🔧 Compact layout: remove spacing noise */
+.filter_badge_button .t-BadgeList-wrap {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Remove theme background & shadow */
+.filter_badge_button .t-BadgeList-wrap.u-color {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* -----------------------------------------------------
+   Hover & focus behavior
+   ----------------------------------------------------- */
+.filter_badge_button .t-BadgeList-item a:hover .custom-status-badge {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+}
+
+.filter_badge_button .t-BadgeList-item a:focus-visible .custom-status-badge {
+    outline: 2px solid rgba(0, 0, 0, 0.35);
+    outline-offset: 2px;
+}
+
+/* -----------------------------------------------------
+   Entry animation
+   ----------------------------------------------------- */
+.filter_badge_button .t-BadgeList-item {
+    animation: badgeFadeIn 0.2s ease-out both;
+}
+
+@keyframes badgeFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* -----------------------------------------------------
+   Stretch badges to full clickable area
+   ----------------------------------------------------- */
+.filter_badge_button .t-BadgeList-item {
+    display: flex !important;
+    align-items: stretch !important;
+}
+
+.filter_badge_button .t-BadgeList-wrap,
+.filter_badge_button .t-BadgeList-value,
+.filter_badge_button .t-BadgeList-item a {
+    display: flex !important;
+    align-items: stretch !important;
+    height: 100% !important;
+}
+
+.filter_badge_button .t-BadgeList-item a {
+    width: 100% !important;
+    text-decoration: none !important;
+}
+
+/* -----------------------------------------------------
+   Badge chip styling (core)
+   ----------------------------------------------------- */
+.filter_badge_button .custom-status-badge {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    padding: 4px 14px !important;
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 500;
+    color: #1f1f1f;
+
+    white-space: nowrap;
+    transition: all 0.15s ease-in-out;
+}
+
+/* -----------------------------------------------------
+   Mobile optimization
+   ----------------------------------------------------- */
+@media (max-width: 768px) {
+    #filter_badge_button .custom-status-badge {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+}
+
+/* -----------------------------------------------------
+   Mobile optimization - in region new line for selected filter
+   ----------------------------------------------------- */
+@media (max-width: 768px) {
+    .wess_current_filter {
+        display: block;
+        margin-top: 6px;
+    }
+}
+
+/* =====================================================
+   Global / UI Utility
+   Purpose: Small status badge with soft pill styling
+   Usage: KPI, status, and filter indicators
+   ===================================================== */
+.custom_status_badge_small {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 4px;
+    border-radius: 20px;
+}
